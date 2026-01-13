@@ -11,7 +11,7 @@ class EntityResolver:
         sql = """
         SELECT TOP 5 c.id, c.symbol, c.Company_name, c._ts 
         FROM c
-        WHERE FullTextContains(c.symbol, @q) OR FullTextContains(c.Company_name,{"term": "solve", "distance":2})
+        WHERE FullTextContains(c.symbol, @q) OR FullTextContains(c.Company_name,{"term": @q, "distance":2})
         """
         items = list(self.container.query_items(
             query=sql,

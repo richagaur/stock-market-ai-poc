@@ -2,8 +2,8 @@
 import math
 import time
 from typing import Dict, Any, List
-from .helpers import iso_from_ts
-from .poc_v1 import V1Results, V1Response
+from helpers import iso_from_ts
+from models import V1Response, V1Results
 
 def build_stock_metric_response(doc: Dict[str, Any], metric_field: str, start_ns: int) -> V1Response:
     symbol = doc.get("symbol") or doc.get("id")
